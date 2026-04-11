@@ -7,7 +7,8 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { FaLayerGroup } from "react-icons/fa";
 
 export default async function categories() {
-  const allCategory = (await getAllCategory()) ?? [];
+  const data = await getAllCategory();
+  const allCategory = Array.isArray(data) ? data : [];
   return (
     <>
       <PageHeader
